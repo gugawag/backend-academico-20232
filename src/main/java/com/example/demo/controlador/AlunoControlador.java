@@ -29,7 +29,7 @@ public class AlunoControlador {
         return this.alunoServico.inserirOuAtualizar(aluno);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public Aluno atualizar(@RequestBody Aluno aluno) {
         return this.alunoServico.inserirOuAtualizar(aluno);
     }
