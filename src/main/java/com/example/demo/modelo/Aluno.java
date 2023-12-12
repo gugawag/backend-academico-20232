@@ -6,12 +6,28 @@ import jakarta.persistence.*;
 @Table(name = "tb_aluno")
 public class Aluno {
 
+
+//    transient -
+//    persistent/managed/attached
+//    detached
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
     private Integer idade;
     private String matricula;
+    public String senha;
+    public String endereco;
+
+    public Aluno() {
+    }
+
+    public Aluno(String nome, Integer idade, String matricula) {
+        this.nome = nome;
+        this.idade = idade;
+        this.matricula = matricula;
+    }
 
     public Long getId() {
         return id;
@@ -43,5 +59,21 @@ public class Aluno {
 
     public void setMatricula(String matricula) {
         this.matricula = matricula;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 }
